@@ -25,6 +25,7 @@ def drawPoint(img, arrDraw):
 
 while True:
     ret, img = cap.read()
+    img = cv2.flip(img, flipCode=1)
     if ret:
         imgRGB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
         result = hands.process(imgRGB)
